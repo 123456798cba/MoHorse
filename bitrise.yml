@@ -1,0 +1,46 @@
+format_version: '11'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: flutter
+
+workflows:
+  build-all:
+    steps:
+    - activate-ssh-key:
+        run_if: '{{not .IsCI}}'
+    - git-clone: {}
+    - flutter-installer:
+        inputs:
+        - version: 3.27.4
+    - flutter-analyze: {}
+    - flutter-test: {}
+    - flutter-build:
+        inputs:
+        - platform: android
+    - flutter-build:
+        inputs:
+        - platform: ios
+        - ios_codesign: 'off'
+    - deploy-to-bitrise-io: {}
+
+  build-ios:
+    steps:
+    - git-clone: {}
+    - flutter-installer:
+        inputs:
+        - version: 3.27.4
+    - flutter-build:
+        inputs:
+        - platform: ios
+        - ios_codesign: 'off'
+    - deploy-to-bitrise-io: {}
+
+  build-android:
+    steps:
+    - git-clone: {}
+    - flutter-installer:
+        inputs:
+        - version: 3.27.4
+    - flutter-build:
+        inputs:
+        - platform: android
+    - deploy-to-bitrise-io: {}

@@ -1,0 +1,77 @@
+# Codemagic 配置文件
+# 用于云端构建 iOS 和 Android 应用
+
+workflows:
+  # iOS 构建工作流
+  ios-workflow:
+    name: iOS Build
+    max_build_duration: 30
+    environment:
+      ios_signing:
+        distribution_type: ad_hoc
+        bundle_identifier: com.caifaxia.mohorse
+      vars:
+        FLUTTER_VERSION: 3.27.4
+    scripts:
+      - name: Install dependencies
+        script: |
+          flutter pub get
+      - name: Build iOS
+        script: |
+          flutter build ios --release --no-codesign
+    artifacts:
+      - build/ios/iphoneos/**/*.app
+      - build/ios/ipa/*.ipa
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com
+
+  # Android 构建工作流
+  android-workflow:
+    name: Android Build
+    max_build_duration: 30
+    environment:
+      vars:
+        FLUTTER_VERSION: 3.27.4
+    scripts:
+      - name: Install dependencies
+        script: |
+          flutter pub get
+      - name: Build Android
+        script: |
+          flutter build apk --release
+    artifacts:
+      - build/**/outputs/apk/**/*.apk
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com
+
+  # 同时构建 iOS 和 Android
+  build-all:
+    name: Build All Platforms
+    max_build_duration: 60
+    environment:
+      ios_signing:
+        distribution_type: ad_hoc
+        bundle_identifier: com.caifaxia.mohorse
+      vars:
+        FLUTTER_VERSION: 3.27.4
+    scripts:
+      - name: Install dependencies
+        script: |
+          flutter pub get
+      - name: Build Android APK
+        script: |
+          flutter build apk --release
+      - name: Build iOS (no codesign)
+        script: |
+          flutter build ios --release --no-codesign
+    artifacts:
+      - build/**/outputs/apk/**/*.apk
+      - build/ios/iphoneos/**/*.app
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com

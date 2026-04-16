@@ -1,0 +1,117 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# VSCode related
+.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+**/ios/.symlinks/
+**/ios/Pods/
+**/ios/Podfile.lock
+**/ios/.generated/
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Flutter/AppFrameworkInfo.plist
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Engine.xcframework
+.packages
+.metadata
+.pub-cache/
+.pub/
+/build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pubspec.lock
+
+# Android related
+**/android/**/gradle-wrapper.jar
+**/android/.gradle
+**/android/captures/
+**/android/gradlew
+**/android/gradlew.bat
+**/android/local.properties
+**/android/**/GeneratedPluginRegistrant.java
+**/android/key.properties
+*.keystore
+*.jks
+
+# iOS/XCode related
+**/ios/**/*.mode1v3
+**/ios/**/*.mode2v3
+**/ios/**/*.pbxuser
+**/ios/**/*.perspectivev3
+**/ios/**/*sync/
+**/ios/**/.sconsign.dblite
+**/ios/**/.tags*
+**/ios/**/.vagrant/
+**/ios/**/DerivedData/
+**/ios/**/Icon?
+**/ios/**/Assets.xcassets/AppIcon.appiconset/Icon-App-*.png
+**/ios/**/Assets.xcassets/AppIcon.appiconset/Contents.json
+**/ios/**/Assets.xcassets/Contents.json
+**/ios/**/project.xcworkspace
+!**/ios/**/project.xcworkspace/contents.xcworkspacedata
+!**/ios/**/project.xcworkspace/xcshareddata/
+!**/ios/**/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+!**/ios/**/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+**/ios/**/xcuserdata/
+**/ios/**/.xcscmversion?
+**/ios/**/Default-568h@2x~ipad.png
+**/ios/**/Default~ipad.png
+**/ios/**/Default@2x~ipad.png
+**/ios/**/Default-568h@2x.png
+**/ios/**/Default-Landscape~ipad.png
+**/ios/**/Default-Landscape@2x~ipad.png
+**/ios/**/Default-Portrait~ipad.png
+**/ios/**/Default-Portrait@2x~ipad.png
+**/ios/**/Default.png
+**/ios/**/Default@2x.png
+**/ios/**/*.dSYM.zip
+**/ios/**/*.dSYM
+
+# Web related
+lib/generated_plugin_registrant.dart
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Test coverage
+coverage/
+
+# Secrets
+*.env
+.env.*
+secrets.yaml
+secrets.json
+
+# Temporary files
+*.tmp
+*.temp
+test_*.py
+test_*.dart
